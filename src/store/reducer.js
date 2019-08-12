@@ -50,7 +50,7 @@ export const bars = (state = [], action) => {
     }
 }
 
-export const  optionValue  = (state = '#bar 1', action) => {
+export const  optionValue  = (state = '0', action) => {
 
     const {type} = action;
 

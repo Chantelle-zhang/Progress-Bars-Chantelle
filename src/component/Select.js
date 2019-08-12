@@ -26,7 +26,7 @@ const Select = ({optionList,optionValue,dispatch}) => {
 
 
                 {optionList.map((option,index) =>
-                    <option value={option} key={option}>#bar {index+1}</option>)
+                    <option value={index} key={option}>#bar {index+1}</option>)
 
                 }
 
