@@ -6,13 +6,16 @@ const Bars = ({bars}) => {
 
     return (
         <div>
-            {bars.map((bar)=><ProgressBar
-                key={bar}
-                data-test='bar'
-                animated
-                now={bar>100?100:bar}
-                variant={bar>100?'danger':'info'}
-                label={`${bar}%`} />)}
+            {bars.map((bar) =>
+                <ProgressBar
+                    key={bar}
+                    data-test='bar'
+                    animated
+                    now={bar > 100 ? 100 : bar}
+                    variant={bar > 100 ? 'danger' : 'info'}
+                    label={`${bar}%`}
+                    className='bar'
+                />)}
         </div>
     )
 }
