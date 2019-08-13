@@ -6,12 +6,12 @@ import {
 import {connect} from 'react-redux';
 
 
-const Select = ({optionList,optionValue,dispatch}) => {
+export const Select = ({optionList, optionValue, dispatch}) => {
 
     const onChange = e => {
-      dispatch({
+        dispatch({
             type: SET_OPTION_VALUE,
-            optionValue:e.target.value
+            optionValue: e.target.value
         })
     };
 
@@ -23,8 +23,14 @@ const Select = ({optionList,optionValue,dispatch}) => {
                 onChange={e => onChange(e)}
                 className='form-control'
             >
-                {optionList.map((option,index) =>
-                    <option value={index} key={option}>#bar {index+1}</option>)
+                {optionList.map((option, index) =>
+                    <option
+                        data-test='option'
+                        value={index}
+                        key={option}
+                    >
+                        #bar {index + 1}
+                    </option>)
 
                 }
 
@@ -35,12 +41,12 @@ const Select = ({optionList,optionValue,dispatch}) => {
 }
 
 Select.propTypes = {
-    optionList:PropTypes.array
+    optionList: PropTypes.array
 
 };
 
 const mapStateToProps = state => ({
-    optionValue:state.optionValue
+    optionValue: state.optionValue
 
 });
 
@@ -49,8 +55,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 
-
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)( Select );
+)(Select);

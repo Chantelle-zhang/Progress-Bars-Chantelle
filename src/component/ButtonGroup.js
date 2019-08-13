@@ -9,6 +9,8 @@ const ButtonGroup = ({buttons, onClick}) =>
         <Row>
             {buttons.map((button)=>
                 <Button
+                    data-test='button'
+                    key={button}
                     variant="info"
                     onClick={()=>onClick(button)}>{button}
                 </Button>)}
