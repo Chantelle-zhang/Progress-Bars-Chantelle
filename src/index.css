@@ -18,5 +18,9 @@ code {
 }
 
 .bar{
-  margin:20px 0
+  margin:20px 0;
+  font-size: 1rem!important;
+  height:30px!important;
+
 }
+
