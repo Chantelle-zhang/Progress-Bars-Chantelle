@@ -23,8 +23,6 @@ const Select = ({optionList,optionValue,dispatch}) => {
                 onChange={e => onChange(e)}
                 className='form-control'
             >
-
-
                 {optionList.map((option,index) =>
                     <option value={index} key={option}>#bar {index+1}</option>)
 
