@@ -8,6 +8,7 @@ const Bars = ({bars}) => {
         <div>
             {bars.map((bar)=><ProgressBar
                 key={bar}
+                data-test='bar'
                 animated
                 now={bar>100?100:bar}
                 variant={bar>100?'danger':'info'}
