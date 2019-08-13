@@ -10,7 +10,8 @@ import ButtonGroup from "./ButtonGroup";
 import Select from "./Select";
 
 
-class HomePage extends Component {
+export class HomePage extends Component {
+
     constructor() {
         super();
         this.onClick= this.onClick.bind(this);
