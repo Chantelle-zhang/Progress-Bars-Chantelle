@@ -3,19 +3,17 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {getPersonsDataWithLoadingState} from "../store/ActionCreators/actions";
 import {
-
+    CHANGE_PROGRESS
 } from "../store/ActionCreators/actionTypes";
 import Bars from "./Bars";
 import ButtonGroup from "./ButtonGroup";
 import Select from "./Select";
 
 
-
-
 class HomePage extends Component {
     constructor() {
         super();
-
+        this.onClick= this.onClick.bind(this);
     }
 
 
@@ -24,7 +22,19 @@ class HomePage extends Component {
         this.props.getPersonsDataWithLoadingState(url);
     }
 
+    onClick(increment){
+      const {barOption,dispatch,limit}=this.props;
+        dispatch({
+            type: CHANGE_PROGRESS,
+            payload:{
+                increment:increment,
+                barOption:barOption,
+                limit:limit
+            }
 
+        })
+
+    }
 
     render() {
         const {isLoading, buttons, bars} = this.props;
@@ -34,7 +44,7 @@ class HomePage extends Component {
                 <div>
                  <Bars bars={bars}/>
                  <Select optionList={bars}/>
-                 <ButtonGroup buttons={buttons}/>
+                 <ButtonGroup buttons={buttons} onClick={this.onClick}/>
                 </div>
 
         );
@@ -46,7 +56,8 @@ const mapStateToProps = state => ({
     isLoading: state.isLoading,
     barOption: state.optionValue,
     buttons:state.buttons,
-    bars:state.bars
+    bars:state.bars,
+    limit:state.limit
 
 });
 
