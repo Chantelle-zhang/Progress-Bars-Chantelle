@@ -11,7 +11,8 @@ import {
     isLoading,
     bars,
     buttons,
-    optionValue
+    optionValue,
+    limit
 
 } from "./store/reducer";
 
@@ -25,7 +26,8 @@ let reducer = combineReducers({
     isLoading,
     bars,
     buttons,
-    optionValue
+    optionValue,
+    limit
 })
 
 let store = createStore(
